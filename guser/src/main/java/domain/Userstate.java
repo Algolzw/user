@@ -137,7 +137,7 @@ public class Userstate implements java.io.Serializable {
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "regDate", nullable = false, length = 19)
+	@Column(name = "regDate", length = 19)
 	public Date getRegDate() {
 		return this.regDate;
 	}
@@ -155,7 +155,7 @@ public class Userstate implements java.io.Serializable {
 		this.regFromIp = regFromIp;
 	}
 
-	@Column(name = "online", nullable = false)
+	@Column(name = "online")
 	public boolean isOnline() {
 		return this.online;
 	}
@@ -193,7 +193,7 @@ public class Userstate implements java.io.Serializable {
 		this.lastChangePsdDate = lastChangePsdDate;
 	}
 
-	@Column(name = "changePsdTimes", nullable = false)
+	@Column(name = "changePsdTimes")
 	public short getChangePsdTimes() {
 		return this.changePsdTimes;
 	}
@@ -202,7 +202,7 @@ public class Userstate implements java.io.Serializable {
 		this.changePsdTimes = changePsdTimes;
 	}
 
-	@Column(name = "lockedOut", nullable = false)
+	@Column(name = "lockedOut")
 	public boolean isLockedOut() {
 		return this.lockedOut;
 	}
@@ -221,7 +221,7 @@ public class Userstate implements java.io.Serializable {
 		this.lastLockoutDate = lastLockoutDate;
 	}
 
-	@Column(name = "lockedOutTimes", nullable = false)
+	@Column(name = "lockedOutTimes")
 	public short getLockedOutTimes() {
 		return this.lockedOutTimes;
 	}
@@ -230,7 +230,7 @@ public class Userstate implements java.io.Serializable {
 		this.lockedOutTimes = lockedOutTimes;
 	}
 
-	@Column(name = "approved", nullable = false)
+	@Column(name = "approved")
 	public boolean isApproved() {
 		return this.approved;
 	}
@@ -239,7 +239,7 @@ public class Userstate implements java.io.Serializable {
 		this.approved = approved;
 	}
 
-	@Column(name = "psdAttemptFailCount", nullable = false)
+	@Column(name = "psdAttemptFailCount")
 	public byte getPsdAttemptFailCount() {
 		return this.psdAttemptFailCount;
 	}
@@ -266,7 +266,7 @@ public class Userstate implements java.io.Serializable {
 		this.email = email;
 	}
 
-	@Column(name = "lockedOff", nullable = false)
+	@Column(name = "lockedOff")
 	public boolean isLockedOff() {
 		return this.lockedOff;
 	}

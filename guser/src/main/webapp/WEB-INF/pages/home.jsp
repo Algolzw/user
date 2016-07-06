@@ -10,10 +10,11 @@
 </head>
 <body>
 <h1>  </h1>
-	<form action="${path }/user/login" method="post">
+	<form action="${path }/login" method="post">
 		<input type="text" name="username" placeholder="username"><br><br>
 		<input type="password" name="password" placeholder="password"><br><br>
-		<input type="submit" value="login" >
+		<input type="submit" value="login" >&nbsp;&nbsp;
+		<a href="${path}/reghome">注册rukou</a>
 	</form>
 </body>
 </html>

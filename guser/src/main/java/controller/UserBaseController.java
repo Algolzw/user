@@ -14,13 +14,12 @@ import dao.inter.UserBase;
 import domain.User;
 
 @Controller
-@RequestMapping(value="/user")
 public class UserBaseController {
 	
-	@Inject()
+	@Inject
 	UserService userService;
 	
-	@RequestMapping("")
+	@RequestMapping("/home")
 	public String login(){
 		return "home";
 	}
@@ -28,10 +27,24 @@ public class UserBaseController {
 	@RequestMapping(value="/login",method=RequestMethod.POST)
 	public @ResponseBody User login(String username,String password){
 		User user = userService.login(username, password);
+		if(user!=null){
+			if(user.isDeleted())
+				return null;
+		}
 		return user;
 	}
-	
-	
+
+	@RequestMapping(value="/reghome")
+	public String registerHome(){
+		return "register";
+	}
+
+	@RequestMapping(value="/register",method=RequestMethod.POST)
+	public @ResponseBody User register(String username,String password,String email){
+		User user = userService.register(username,password,email);
+		userService.verify(user.getUserId());
+		return user;
+	}
 	
 	
 }
